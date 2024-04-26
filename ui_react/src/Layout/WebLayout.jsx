@@ -1,17 +1,22 @@
 import React from 'react'
 
 import { Outlet } from 'react-router-dom'
-import Navbar from '../components/public/Navbar'
-import Footer from '../components/public/Footer'
+import Navbar from '../components/Public/Navbar'
+import Footer from '../components/Public/Footer'
+
+
+
+
+
 
 
 const WebLayout = () => {
   
     return (
         <>
-            <Navbar />
+            <Navbar/>
             <Outlet />
-            <Footer />
+            <Footer/>
         </>
     )
 }

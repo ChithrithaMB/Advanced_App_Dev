@@ -20,7 +20,7 @@ const Signup = () => {
 
     const handleSignup = (e) => {
         e.preventDefault()
-        // Perform validation
+        
         const validationErrors = {}
         if (!formData.name) {
             validationErrors.name = 'Name is required'
@@ -45,8 +45,8 @@ const Signup = () => {
         if (Object.keys(validationErrors).length > 0) {
             setErrors(validationErrors)
         } else {
-            // Proceed with signup logic
-            navigate('/login') // Redirect to login after successful signup
+            
+            navigate('/login') 
         }
     }
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FiKey, FiEdit2 } from 'react-icons/fi';
-import { FaUserCog } from 'react-icons/fa'; // Replaced FaUser with FaUserCog
+import { FaUserCog } from 'react-icons/fa';
 
 
 const AdminSettings = () => {
@@ -21,7 +21,7 @@ const AdminSettings = () => {
                             </button>
                         </div>
                         <div className='h-3/6 w-full flex justify-center items-center'>
-                            <FaUserCog className='h-28 w-28 border-4 border-blue-500/10 square-full shadow-md shadow-blue-500/40' /> {/* Changed to FaUserCog */}
+                            <FaUserCog className='h-28 w-28 border-4 border-blue-500/10 square-full shadow-md shadow-blue-500/40' /> 
                         </div>
                         <div className='h-2/6 w-full flex justify-center items-center'>
                             <p className='text-3xl font-bold text-gray-500'>Admin</p>

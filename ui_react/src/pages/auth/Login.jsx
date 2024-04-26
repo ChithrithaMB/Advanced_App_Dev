@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const navigate = useNavigate();
 
-    // State for form data and validation errors
+    
     const [formData, setFormData] = useState({
         email: '',
         password: '',
-        role: '', // Added role field for user/admin selection
-        secretCode: '', // Added secretCode field
+        role: '', 
+        secretCode: '', 
     });
     const [errors, setErrors] = useState({});
 
@@ -20,7 +20,7 @@ const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault();
 
-        // Validate form fields
+        
         const validationErrors = {};
         if (!formData.email) {
             validationErrors.email = 'Email is required';
@@ -32,15 +32,15 @@ const Login = () => {
             validationErrors.role = 'Role is required';
         }
 
-        // Check secret code for admin login
+        
         if (formData.role === 'admin' && formData.secretCode !== '5467') {
             validationErrors.secretCode = 'Invalid secret code';
         }
 
-        // Update errors state and proceed with login if no errors
+        
         if (Object.keys(validationErrors).length === 0) {
             setErrors({});
-            // Redirect to user or admin dashboard based on role
+            
             navigate(`/${formData.role}/dashboard`);
         } else {
             setErrors(validationErrors);

@@ -69,40 +69,40 @@ const AdminTheme = () => {
 
   return (
     <main className="p-4">
-      <div className="bg-gray-100 rounded-lg shadow-md p-6">
+      <div className="bg-grey-400 rounded-lg shadow-md p-6">
         <h2 className="text-xl font-bold mb-4">ADMIN THEME</h2>
         <div className="mb-4">
           <input
             type="text"
-            className="border rounded-md p-2 mr-2 focus:outline-none focus:border-purple-500"
+            className="border rounded-md p-2 mr-2"
             placeholder="Enter theme"
             value={newGiftTheme}
             onChange={handleThemeChange}
           />
           <input
             type="text"
-            className="border rounded-md p-2 mr-2 focus:outline-none focus:border-purple-500"
+            className="border rounded-md p-2 mr-2"
             placeholder="Enter details"
             value={newGiftDetails}
             onChange={handleDetailsChange}
           />
           <input
             type="text"
-            className="border rounded-md p-2 mr-2 focus:outline-none focus:border-purple-500"
+            className="border rounded-md p-2 mr-2"
             placeholder="Enter price"
             value={newGiftPrice}
             onChange={handlePriceChange}
           />
           {editingId !== null ? (
             <button
-              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none"
+              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
               onClick={handleSaveEdit}
             >
               Save
             </button>
           ) : (
             <button
-              className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               onClick={handleAddGift}
             >
               Add Gift
@@ -111,7 +111,7 @@ const AdminTheme = () => {
         </div>
         <table className="table-auto w-full">
           <thead>
-            <tr className="bg-gray-200">
+            <tr>
               <th className="px-4 py-2">Theme</th>
               <th className="px-4 py-2">Details</th>
               <th className="px-4 py-2">Price</th>
@@ -120,19 +120,28 @@ const AdminTheme = () => {
           </thead>
           <tbody>
             {giftIdeas.map(gift => (
-              <tr key={gift.id} className="hover:bg-purple-50 transition duration-300 ease-in-out">
+              <tr key={gift.id} className="hover:bg-blue-100">
                 <td className="border px-4 py-2">{gift.theme}</td>
                 <td className="border px-4 py-2">{gift.details}</td>
                 <td className="border px-4 py-2">{gift.price}</td>
                 <td className="border px-4 py-2">
+                  {editingId === gift.id ? (
+                    <button
+                      className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 rounded mr-2"
+                      onClick={handleSaveEdit}
+                    >
+                      Save
+                    </button>
+                  ) : (
+                    <button
+                      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded mr-2"
+                      onClick={() => handleEditGift(gift.id)}
+                    >
+                      Edit
+                    </button>
+                  )}
                   <button
-                    className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-1 px-2 rounded focus:outline-none"
-                    onClick={() => handleEditGift(gift.id)}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded ml-2 focus:outline-none"
+                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded"
                     onClick={() => handleDeleteGift(gift.id)}
                   >
                     Delete

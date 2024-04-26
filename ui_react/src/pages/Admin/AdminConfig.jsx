@@ -3,7 +3,7 @@ import React from 'react';
 
 const AdminConfig = () => {
     const deleteQuery = () => {
-    
+      
     };
 
     return (

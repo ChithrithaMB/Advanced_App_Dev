@@ -4,12 +4,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import WebLayout from './Layout/WebLayout';
 import Home from './pages/Home';
-import Login from './pages/auth/Login';
+import Login from './pages/Auth/Login';
 import Contact from './pages/Contact';
 const UserLayout = lazy(() => import('./Layout/UserLayout'))
-const Signup = lazy(() => import('./pages/auth/Signup'))
+const Signup = lazy(() => import('./pages/Auth/Signup'))
 const UserDashboard = lazy(() => import('./pages/Shared/UserDashboard'))
-const UserSettings = lazy(() => import('./pages/Shared/Usersettings'))
+const UserSettings = lazy(() => import('./pages/Shared/UserSettings'))
 
 
 import Error404 from './pages/Error404';
@@ -18,7 +18,7 @@ import Termsc from './pages/Termsc';
 import Placeorder from './pages/Shared/Placeorder';
 import Myorder from './pages/Shared/Myorder';
 import Payorder from './pages/Shared/Payorder';
-import Loader from './components/public/Loader';
+import Loader from './components/Public/Loader';
 const AdminLayout = lazy(() => import ('./Layout/AdminLayout'))
 const AdminDashboard = lazy(() => import('./pages/Admin/AdminDashboard'))
 const AdminGift = lazy(() => import('./pages/Admin/AdminGift'))

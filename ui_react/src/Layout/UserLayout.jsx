@@ -1,7 +1,8 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Userleftbar from '../components/shared/Userleftbar'
-import UsertopBar from '../components/shared/Usertopbar'
+import Userleftbar from '../components/Shared/Userleftbar'
+import UsertopBar from '../components/Shared/Usertopbar'
+
 
 
 const UserLayout = () => {

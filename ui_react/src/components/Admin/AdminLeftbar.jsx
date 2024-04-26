@@ -4,7 +4,7 @@ import { RiGift2Line, RiPaletteLine, RiFileList2Line, RiHistoryLine, RiLogoutBox
 
 class AdminLeftbar extends React.Component {
   render() {
-    const { logout, settings } = this.props;
+    const { logout, settings } = this.props; 
 
     return (
       <div className="left-sidebar bg-gray-800 text-white w-48 py-6 px-4">
@@ -29,11 +29,11 @@ class AdminLeftbar extends React.Component {
           Payment History
         </Link>
         <Link to="/admin/config" className="block w-full text-left py-2 px-4 rounded hover:bg-gray-700 hover:text-white transition duration-300 mb-4 border-b border-gray-600">
-              <RiEarthLine className="inline-block mr-2" /> 
+              <RiEarthLine className="inline-block mr-2" /> {/* Changed icon to RiSettings3Line */}
               Config
         </Link>
        <Link to="/admin/setting" className="block w-full text-left py-2 px-4 rounded hover:bg-gray-700 hover:text-white transition duration-300 mb-4 border-b border-gray-600">
-              <RiSettings3Line className="inline-block mr-2" /> 
+              <RiSettings3Line className="inline-block mr-2" /> {/* Changed icon to RiSettings3Line */}
               Settings
                </Link>
         

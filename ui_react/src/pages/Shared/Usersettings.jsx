@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import UserTitlebar from '../../components/shared/Usertitlebar';
-import { FiEdit, FiKey, FiUser } from 'react-icons/fi'; // Import React icons
+
+import { FiEdit, FiKey, FiUser } from 'react-icons/fi';
+import Usertitlebar from '../../components/Shared/Usertitlebar';
 
 const UserSettings = () => {
   const [editModel, setEditModel] = useState(false);
@@ -8,7 +9,7 @@ const UserSettings = () => {
 
   return (
     <>
-      <UserTitlebar Title="Settings" />
+      <Usertitlebar Title="Settings" />
       <div className="h-[90vh] flex justify-center items-center shadow-sm shadow-slate-100 w-[84vw]">
         <div className="h-[40vh] w-[50vw] flex flex-row shadow-md shadow-blue-/20">
           <div className="w-1/2 h-full flex flex-col">
@@ -19,7 +20,7 @@ const UserSettings = () => {
                   setEditModel(true);
                 }}
               >
-                <FiEdit className="text-blue-300" /> {/* Use FiEdit icon */}
+                <FiEdit className="text-blue-300" /> 
               </button>
               <button
                 className="p-2 border-2 border-blue-300/50 hover:border-blue-400 hover:bg-blue-200/40 rounded-full"
@@ -31,10 +32,10 @@ const UserSettings = () => {
               </button>
             </div>
             <div className="h-3/6 w-full flex justify-center items-center">
-              <FiUser className="text-blue-500 text-6xl" /> {/* Bigger size User Icon */}
+              <FiUser className="text-blue-500 text-6xl" />
             </div>
             <div className="h-2/6 w-full flex justify-center items-center">
-              <p className="text-3xl font-bold text-blue-500">CHITHRITHA M B</p>
+              <p className="text-3xl font-bold text-blue-500">DIVYAJ P</p>
             </div>
           </div>
           <div className="w-1/2 h-full flex justify-center items-center flex-col">
@@ -43,7 +44,7 @@ const UserSettings = () => {
                 Email
               </div>
               <div className="w-2/3 h-full flex items-center justify-start font-semibold px-4">
-                chithu@gmail.com
+                divya@gmail.com
               </div>
             </div>
             <div className="h-1/4 w-full flex flex-row border-2 border-blue-200/50">
@@ -51,7 +52,7 @@ const UserSettings = () => {
                 Phone
               </div>
               <div className="w-2/3 h-full flex items-center justify-start font-semibold px-4">
-                6381139910
+                9897654321
               </div>
             </div>
             <div className="h-2/4 w-full flex flex-row border-2 border-blue-200/50">
@@ -156,7 +157,7 @@ const UserSettings = () => {
                 >
                   Cancel
                 </button>
-                <button className="w-1/2 h-full bg-blue-500 font-bold text-white">
+                <button className="w-1/2 h-full bg-green-500 font-bold text-white">
                   Update Password
                 </button>
               </div>

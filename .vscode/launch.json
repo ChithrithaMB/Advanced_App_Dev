@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-DreamydelightsApplication<dreamydelights>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.hashitout.dreamydelights.DreamydelightsApplication",
+            "projectName": "dreamydelights",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

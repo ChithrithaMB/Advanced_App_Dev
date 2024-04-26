@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiCheckCircle, FiXCircle } from 'react-icons/fi'; // Import icons from react-icons library
+import { FiCheckCircle, FiXCircle } from 'react-icons/fi';
 
 const Payorder = () => {
   const [paymentMethod, setPaymentMethod] = useState('card');
@@ -17,11 +17,11 @@ const Payorder = () => {
     setPaymentDetails({ ...paymentDetails, [e.target.name]: e.target.value });
   };
 
-  // Mock payment logic
+  
   const handlePayment = () => {
-    // Perform payment processing here
+    
     console.log('Payment processed successfully!');
-    // Redirect to a success page or update order status
+    
   };
 
   return (

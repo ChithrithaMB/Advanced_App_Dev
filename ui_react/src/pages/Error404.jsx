@@ -1,5 +1,5 @@
 import React from 'react';
-import Errimg from '../assets/img/err404.png'; // Import the error image
+import Errimg from '../assets/img/err404.png'; 
 import { useNavigate } from 'react-router-dom';
 
 const Error404 = () => {
@@ -13,7 +13,7 @@ const Error404 = () => {
         <div className="h-screen w-screen bg-gradient-to-b from-purple-200 to-pink-200 flex items-center justify-center">
             <div className="h-[50vh] w-[40vw] flex items-center justify-center flex-col shadow-md rounded-lg bg-white">
                 <div className="h-3/4 flex items-center justify-center flex-col w-full">
-                    {/* Use the correct variable name for the image source */}
+                    
                     <img src={Errimg} alt="404" className="w-[50%]" />
                     <h1 className="text-8xl font-bold font-mono text-purple-500">404</h1>
                     <p className="font-semibold text-purple-700">Oops! Page not found.</p>

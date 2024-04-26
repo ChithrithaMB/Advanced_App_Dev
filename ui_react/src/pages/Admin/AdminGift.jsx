@@ -4,7 +4,7 @@ const AdminGift = () => {
   const [giftIdeas, setGiftIdeas] = useState([
     { id: 1, name: 'Personalized Jewelry', image: 'https://cdn.notonthehighstreet.com/fs/4b/2a/3b0b-0af9-47c9-8ec6-555c2d0982bc/preview_sterling-silver-name-necklace.jpg', price: '$49.99', theme: 'Elegant' },
     { id: 2, name: 'Customized Flower Bouquet', image: 'https://www.fnp.com/images/pr/m/v20230818123738/joyful-personalised-rose-bouquet.jpg', price: '$39.99', theme: 'Romantic' },
-   
+    { id: 3, name: 'Engraved Wooden Watch', image: 'https://images-cdn.ubuy.co.in/65430f46d524f0261a443c48-wastime-customized-engraved-wooden.jpg', price: '$59.99', theme: 'Classic' },
   ]);
 
   const [newGiftName, setNewGiftName] = useState('');
@@ -77,80 +77,118 @@ const AdminGift = () => {
   };
 
   return (
-    <main className="p-4 bg-gray-100 min-h-screen">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl font-bold mb-4 text-center">ADMIN GIFT</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {giftIdeas.map(gift => (
-            <div key={gift.id} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 ease-in-out">
-              <img src={gift.image} alt={gift.name} className="w-full h-48 object-cover object-center" />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold mb-2">{gift.name}</h3>
-                <p className="text-gray-600 mb-2">Price: {gift.price}</p>
-                <p className="text-gray-600">Theme: {gift.theme}</p>
-                <div className="flex justify-between mt-4">
-                  <button
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none"
-                    onClick={() => handleEditGift(gift.id)}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none"
-                    onClick={() => handleDeleteGift(gift.id)}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="mt-8">
+    <main className="p-4">
+      <div className="bg-grey-400 rounded-lg shadow-md p-6">
+        <h2 className="text-xl font-bold mb-4">ADMIN GIFT</h2>
+        <div className="mb-4">
           <input
             type="text"
-            className="border rounded-md p-2 mr-2 focus:outline-none focus:border-blue-500"
+            className="border rounded-md p-2 mr-2"
             placeholder="Enter new gift idea"
             value={newGiftName}
             onChange={handleNameChange}
           />
           <input
             type="text"
-            className="border rounded-md p-2 mr-2 focus:outline-none focus:border-blue-500"
+            className="border rounded-md p-2 mr-2"
             placeholder="Enter image URL"
             value={newGiftImage}
             onChange={handleImageChange}
           />
           <input
             type="text"
-            className="border rounded-md p-2 mr-2 focus:outline-none focus:border-blue-500"
+            className="border rounded-md p-2 mr-2"
             placeholder="Enter price"
             value={newGiftPrice}
             onChange={handlePriceChange}
           />
           <input
             type="text"
-            className="border rounded-md p-2 mr-2 focus:outline-none focus:border-blue-500"
+            className="border rounded-md p-2 mr-2"
             placeholder="Enter theme"
             value={newGiftTheme}
             onChange={handleThemeChange}
           />
           {editingId !== null ? (
             <button
-              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none"
+              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
               onClick={handleSaveEdit}
             >
               Save
             </button>
           ) : (
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               onClick={handleAddGift}
             >
               Add Gift
             </button>
           )}
         </div>
+        <ul>
+          {giftIdeas.map(gift => (
+            <li key={gift.id} className="mb-4 flex items-center hover:bg-blue-100 p-2 rounded">
+              <img src={gift.image} alt={gift.name} className="w-12 h-12 mr-4" />
+              {editingId === gift.id ? (
+                <div>
+                  <input
+                    type="text"
+                    className="border rounded-md p-2 mr-2 border-blue-500"
+                    value={newGiftName}
+                    onChange={handleNameChange}
+                  />
+                  <input
+                    type="text"
+                    className="border rounded-md p-2 mr-2 border-blue-500"
+                    value={newGiftImage}
+                    onChange={handleImageChange}
+                  />
+                  <input
+                    type="text"
+                    className="border rounded-md p-2 mr-2 border-blue-500"
+                    value={newGiftPrice}
+                    onChange={handlePriceChange}
+                  />
+                  <input
+                    type="text"
+                    className="border rounded-md p-2 mr-2 border-blue-500"
+                    value={newGiftTheme}
+                    onChange={handleThemeChange}
+                  />
+                </div>
+              ) : (
+                <div>
+                  <span className="text-blue-500">{gift.name}</span>
+                  <p className="text-sm text-green-500">{gift.price}</p>
+                  <p className="text-sm text-red-500">{gift.theme}</p>
+                </div>
+              )}
+              <div>
+                {editingId === gift.id ? (
+                  <button
+                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 rounded"
+                    onClick={handleSaveEdit}
+                  >
+                    Save
+                  </button>
+                ) : (
+                  <button
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
+                    onClick={() => handleEditGift(gift.id)}
+                  >
+                    Edit
+                  </button>
+                )}
+                <button
+                  className="ml-2 bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded"
+                  onClick={() => handleDeleteGift(gift.id)}
+                >
+                  Delete
+                </button>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </main>
   );
